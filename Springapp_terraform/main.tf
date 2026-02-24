@@ -27,3 +27,12 @@ module "natgateway" {
   public_subnet_1_id = module.vpc.public_subnet_1_id
   public_subnet_2_id = module.vpc.public_subnet_2_id
 }
+
+module "security_group" {
+  source = "./modules/aws-securityGroup"
+  vpc_id = module.vpc.vpc_id
+  applicationName = var.applicationName
+  environment = var.environment
+  common_tags = var.common_tags
+}
+
