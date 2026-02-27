@@ -55,3 +55,9 @@ variable secure_subnet_2 {
   type        = string
   default     = "10.0.6.0/24"
 }
+
+variable region {
+  type        = string
+  default     = "ap-south-1"
+  description = "AWS region to deploy resources"
+}
